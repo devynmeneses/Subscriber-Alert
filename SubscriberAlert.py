@@ -29,7 +29,7 @@ while not ticker.wait(time_wait):
     # Checks if new channel subs is greater than previous check, and plays sound accordingly
     if int(channel_subs) > int(test_subs):
         if int(channel_subs) >= 100:
-            song_to_play = mixer.Sound(songs[randint(0, len(songs))])
+            song_to_play = mixer.Sound(songs[randint(0, len(songs) - 1)])
             song_to_play.play()
         else:
             sub_sound = mixer.Sound("INSERT TIER 1 SUB ALERT")
