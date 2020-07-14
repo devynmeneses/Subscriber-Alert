@@ -15,11 +15,10 @@ pygame.init()
 songs = ["INSERT SONG FILES HERE"]
 
 # Ticker and time wait information
-time_wait = randint(10, 30)
 ticker = threading.Event()
 
 # Subscriber check loop
-while not ticker.wait(time_wait):
+while not ticker.wait(randint(30, 60)):
 
     # Requests to pull channel subs from YouTube API
     channel_url = "https://www.googleapis.com/youtube/v3/channels?part=statistics&id=" + username + "&key=" + key
